@@ -1,0 +1,16 @@
+services:
+    dv_lab_deployment_builds_executor.library.builds_executor:
+        class: DvLab\DeploymentBuildsExecutor\BuildsExecutor
+        arguments:
+            - %dv_lab_deployment_builds_executor.builds-dir%
+            - %dv_lab_deployment_builds_executor.latest-build-filename%
+    dv_lab_deployment_builds_executor.command.list_new_builds:
+        class: DvLab\DeploymentBuildsExecutorBundle\Command\ListNewBuilds
+        arguments: [@dv_lab_deployment_builds_executor.library.builds_executor]
+        tags:
+            - {name: console.command}
+    dv_lab_deployment_builds_executor.command.execute_new_builds:
+        class: DvLab\DeploymentBuildsExecutorBundle\Command\ExecuteNewBuilds
+        arguments: [@dv_lab_deployment_builds_executor.library.builds_executor]
+        tags:
+            - {name: console.command}
