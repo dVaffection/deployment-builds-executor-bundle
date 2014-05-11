@@ -17,7 +17,17 @@ class DvLabDeploymentBuildsExecutorExtension extends Extension
             new FileLocator(__DIR__ . '/../Resources/config')
         );
 
+        foreach ($configs as $subConfig) {
+            if (isset($subConfig['builds-dir'])) {
+                $container->setParameter('dv_lab_deployment_builds_executor.builds-dir', $subConfig['builds-dir']);
+            }
+            if (isset($subConfig['latest-build-filename'])) {
+                $container->setParameter('dv_lab_deployment_builds_executor.latest-build-filename', $subConfig['latest-build-filename']);
+            }
+        }
+
         $loader->load('services.yml');
+
     }
 
 }
