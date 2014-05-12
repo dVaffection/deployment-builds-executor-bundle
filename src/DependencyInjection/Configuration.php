@@ -15,8 +15,8 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-            ->scalarNode('builds-dir')->isRequired()->cannotBeEmpty()->end()
-            ->scalarNode('latest-build-filename')->isRequired()->cannotBeEmpty()->end()
+            ->scalarNode('builds_dir')->isRequired()->cannotBeEmpty()->end()
+            ->scalarNode('latest_build_filename')->isRequired()->cannotBeEmpty()->end()
             ->end();
 
         return $treeBuilder;

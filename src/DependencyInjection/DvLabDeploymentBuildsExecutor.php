@@ -12,20 +12,22 @@ class DvLabDeploymentBuildsExecutor extends Extension
 
     public function load(array $configs, ContainerBuilder $container)
     {
+        $configuration = new Configuration();
+        $config        = $this->processConfiguration($configuration, $configs);
+
+
         $loader = new YamlFileLoader(
             $container,
             new FileLocator(__DIR__ . '/../Resources/config')
         );
 
-        foreach ($configs as $subConfig) {
-            if (isset($subConfig['builds-dir'])) {
-                $container->setParameter('deployment_builds_executor.builds-dir', $subConfig['builds-dir']);
-            }
-            if (isset($subConfig['latest-build-filename'])) {
-                $container->setParameter(
-                    'deployment_builds_executor.latest-build-filename', $subConfig['latest-build-filename']
-                );
-            }
+        if (isset($config['builds_dir'])) {
+            $container->setParameter('deployment_builds_executor.builds_dir', $config['builds_dir']);
+        }
+        if (isset($config['latest_build_filename'])) {
+            $container->setParameter(
+                'deployment_builds_executor.latest_build_filename', $config['latest_build_filename']
+            );
         }
 
         $loader->load('services.yml');

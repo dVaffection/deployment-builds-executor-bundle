@@ -2,8 +2,8 @@ services:
     dv_lab_deployment_builds_executor.library.builds_executor:
         class: DvLab\DeploymentBuildsExecutor\BuildsExecutor
         arguments:
-            - %deployment_builds_executor.builds-dir%
-            - %deployment_builds_executor.latest-build-filename%
+            - %deployment_builds_executor.builds_dir%
+            - %deployment_builds_executor.latest_build_filename%
     dv_lab_deployment_builds_executor.command.list_new_builds:
         class: DvLab\DeploymentBuildsExecutorBundle\Command\ListNewBuilds
         arguments: [@dv_lab_deployment_builds_executor.library.builds_executor]
