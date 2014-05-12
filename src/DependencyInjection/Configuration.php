@@ -11,7 +11,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode    = $treeBuilder->root('dv_lab_deployment_builds_executor');
+        $rootNode    = $treeBuilder->root('deployment_builds_executor');
 
         $rootNode
             ->children()

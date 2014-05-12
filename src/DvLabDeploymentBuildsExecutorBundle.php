@@ -4,7 +4,7 @@ namespace DvLab\DeploymentBuildsExecutorBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use DvLab\DeploymentBuildsExecutorBundle\DependencyInjection\DvLabDeploymentBuildsExecutorExtension;
+use DvLab\DeploymentBuildsExecutorBundle\DependencyInjection\DvLabDeploymentBuildsExecutor;
 
 class DvLabDeploymentBuildsExecutorBundle extends Bundle
 {
@@ -14,7 +14,7 @@ class DvLabDeploymentBuildsExecutorBundle extends Bundle
         parent::build($container);
 
         // register extensions that do not follow the conventions manually
-        $container->registerExtension(new DvLabDeploymentBuildsExecutorExtension());
+        $container->registerExtension(new DvLabDeploymentBuildsExecutor());
     }
 
 } 

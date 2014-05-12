@@ -7,7 +7,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\Config\FileLocator;
 
-class DvLabDeploymentBuildsExecutorExtension extends Extension
+class DvLabDeploymentBuildsExecutor extends Extension
 {
 
     public function load(array $configs, ContainerBuilder $container)
@@ -19,15 +19,21 @@ class DvLabDeploymentBuildsExecutorExtension extends Extension
 
         foreach ($configs as $subConfig) {
             if (isset($subConfig['builds-dir'])) {
-                $container->setParameter('dv_lab_deployment_builds_executor.builds-dir', $subConfig['builds-dir']);
+                $container->setParameter('deployment_builds_executor.builds-dir', $subConfig['builds-dir']);
             }
             if (isset($subConfig['latest-build-filename'])) {
-                $container->setParameter('dv_lab_deployment_builds_executor.latest-build-filename', $subConfig['latest-build-filename']);
+                $container->setParameter(
+                    'deployment_builds_executor.latest-build-filename', $subConfig['latest-build-filename']
+                );
             }
         }
 
         $loader->load('services.yml');
+    }
 
+    public function getAlias()
+    {
+        return 'deployment_builds_executor';
     }
 
 }
