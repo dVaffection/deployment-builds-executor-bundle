@@ -131,16 +131,16 @@
         },
         {
             "name": "dv-affection/deployment-builds-executor",
-            "version": "0.1.2",
+            "version": "0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dVaffection/deployment-builds-executor.git",
-                "reference": "7433997f74eedb7d244085be05eb31ec9dfb2721"
+                "reference": "8c5eaacd4938f3dea58ee54ef9759b8cf46e4349"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dVaffection/deployment-builds-executor/zipball/7433997f74eedb7d244085be05eb31ec9dfb2721",
-                "reference": "7433997f74eedb7d244085be05eb31ec9dfb2721",
+                "url": "https://api.github.com/repos/dVaffection/deployment-builds-executor/zipball/8c5eaacd4938f3dea58ee54ef9759b8cf46e4349",
+                "reference": "8c5eaacd4938f3dea58ee54ef9759b8cf46e4349",
                 "shasum": ""
             },
             "require": {
@@ -172,7 +172,7 @@
                 "deployment",
                 "php"
             ],
-            "time": "2014-05-11 10:32:13"
+            "time": "2014-05-12 22:12:20"
         },
         {
             "name": "psr/log",

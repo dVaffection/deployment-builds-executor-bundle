@@ -19,7 +19,7 @@ class ListNewBuildsTest extends \PHPUnit_Framework_TestCase
         $application = new Application();
         $application->add(new ListNewBuilds($buildsExecutor));
 
-        $command       = $application->find('dv_lab:deployment_builds_executor:list-new-builds');
+        $command       = $application->find('deployment_builds_executor:list-new-builds');
         $commandTester = new CommandTester($command);
         $commandTester->execute(array('command' => $command->getName()));
 
@@ -42,7 +42,7 @@ class ListNewBuildsTest extends \PHPUnit_Framework_TestCase
         $application = new Application();
         $application->add(new ListNewBuilds($buildsExecutor));
 
-        $command       = $application->find('dv_lab:deployment_builds_executor:list-new-builds');
+        $command       = $application->find('deployment_builds_executor:list-new-builds');
         $commandTester = new CommandTester($command);
         $commandTester->execute(array('command' => $command->getName()));
 

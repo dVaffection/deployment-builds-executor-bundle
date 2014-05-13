@@ -25,7 +25,7 @@ class ExecuteNewBuilds extends Command
     protected function configure()
     {
         $this
-            ->setName('dv_lab:deployment_builds_executor:execute-new-builds')
+            ->setName('deployment_builds_executor:execute-new-builds')
             ->setDescription('Execute new build files');
     }
 

@@ -25,7 +25,7 @@ class ListNewBuilds extends Command
     protected function configure()
     {
         $this
-            ->setName('dv_lab:deployment_builds_executor:list-new-builds')
+            ->setName('deployment_builds_executor:list-new-builds')
             ->setDescription('Display new build files');
     }
 
