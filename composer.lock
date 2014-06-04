@@ -1,7 +1,8 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
     "hash": "6e8922aed60f91ed2f7b0405267b7a74",
     "packages": [
@@ -131,16 +132,16 @@
         },
         {
             "name": "dv-affection/deployment-builds-executor",
-            "version": "0.1.3",
+            "version": "0.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dVaffection/deployment-builds-executor.git",
-                "reference": "8c5eaacd4938f3dea58ee54ef9759b8cf46e4349"
+                "reference": "947e9ebf273c40763edda9f868e65a268586479d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dVaffection/deployment-builds-executor/zipball/8c5eaacd4938f3dea58ee54ef9759b8cf46e4349",
-                "reference": "8c5eaacd4938f3dea58ee54ef9759b8cf46e4349",
+                "url": "https://api.github.com/repos/dVaffection/deployment-builds-executor/zipball/947e9ebf273c40763edda9f868e65a268586479d",
+                "reference": "947e9ebf273c40763edda9f868e65a268586479d",
                 "shasum": ""
             },
             "require": {
@@ -172,7 +173,7 @@
                 "deployment",
                 "php"
             ],
-            "time": "2014-05-12 22:12:20"
+            "time": "2014-06-04 00:08:39"
         },
         {
             "name": "psr/log",
