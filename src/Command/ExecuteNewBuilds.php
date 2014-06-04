@@ -31,14 +31,19 @@ class ExecuteNewBuilds extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $result = $this->buildsExecutor->executeNewBuilds();
+        $builds = $this->buildsExecutor->getNewBuilds();
+        if (count($builds)) {
+            $result = $this->buildsExecutor->executeNewBuilds();
 
-        if ($result->getReturnCode() > 0) {
-            $output->writeln('<error>An error occurred during a build execution. Stop further execution</error>');
-        } else {
-            foreach ($result->getOutput() as $buildOutput) {
-                $output->writeln($buildOutput);
+            if ($result->getReturnCode() > 0) {
+                $output->writeln('<error>An error occurred during a build execution. Stop further execution</error>');
+            } else {
+                foreach ($result->getOutput() as $buildOutput) {
+                    $output->writeln($buildOutput);
+                }
             }
+        } else {
+            $output->writeln('<comment>No new builds found</comment>');
         }
     }
 
